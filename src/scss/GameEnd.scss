@@ -1,0 +1,31 @@
+:root {
+    --visibility: hidden;
+}
+.gameEnd {
+    border-radius: 15px;
+    width: 25vw;
+    height: 20vh;
+    position: absolute;
+    background: rgb(76, 221, 209);
+    top: calc(90vh / 2);
+    visibility: var(--visibility);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &.render {
+        animation: onLosing 250ms ease-in-out 0.5s;
+    }
+}
+
+@keyframes onLosing {
+    from {
+        transform: scale(0%);
+        opacity: 0;
+    }
+    to {
+        transform: scale(100%);
+        opacity: 1;
+    }
+}

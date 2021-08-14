@@ -1,0 +1,57 @@
+.Menu {
+    background: rgb(76, 221, 209);
+    height: 25vh;
+    width: 50vw;
+
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: space-between;
+
+    padding:1rem;
+    border-radius: 15px;
+    animation: onLoad 1s ease-in-out;
+
+    & .button{
+        margin:0px 20px;
+    }
+    & .menuHeading {
+        margin:0px;
+        grid-column: 1/4;
+        line-height: 10vh;
+        font-weight: 300;
+    }
+
+    &.hidden {
+        transition: all 250ms ease-in;
+        transform: translateX(-400px);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes onLoad {
+    0% {
+        transform: translateY(-500px);
+    }
+    80% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .Menu {
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        & .option {
+            margin: 10px 0px;
+        }
+    }
+}

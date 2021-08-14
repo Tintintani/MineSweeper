@@ -1,0 +1,93 @@
+:root {
+    --large: 3rem;
+    --medium: 2rem;
+    --small: 1.5rem;
+    --visibility: hidden;
+}
+.renderBoard {
+    animation: onBoardLoad 800ms ease-in-out;
+    border: 4px solid rgb(78, 179, 47);
+    padding: 0px;
+    background: rgb(78, 179, 47);
+}
+.board {
+    background: #f3e9e7;
+    border: 4px #e76f3d solid;
+    visibility: var(--visibility);
+}
+
+.showFlagCount {
+    display: flex;
+    justify-content: center;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    background: rgb(98, 201, 39);
+    visibility: var(--visibility);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.cell {
+    z-index: 0;
+    border: 1px solid rgb(13, 124, 146);
+    position: relative;
+    &.Even {
+        background: rgba(0, 166, 199, 0.8);
+        &.Revealed {
+            background: rgba(243, 141, 63, 0.8);
+        }
+        &.MinePresent {
+            background: red;
+        }
+    }
+    &.Odd {
+        background: rgb(0, 166, 199);
+        &.Revealed {
+            background: rgb(243, 141, 63);
+        }
+        &.MinePresent {
+            background: red;
+        }
+    }
+
+    &.large {
+        height: var(--large);
+        width: var(--large);
+        line-height: var(--large);
+        font-size: calc(var(--large) / 2);
+    }
+    &.medium {
+        height: var(--medium);
+        width: var(--medium);
+        line-height: var(--medium);
+        font-size: calc(var(--medium) / 2);
+    }
+    &.small {
+        height: var(--small);
+        width: var(--small);
+        line-height: var(--small);
+        font-size: calc(var(--small) / 1.6);
+    }
+}
+
+@keyframes onBoardLoad {
+    0% {
+        transform: translateX(900px);
+    }
+    80% {
+        transform: translateX(-40px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --large: 2rem;
+        --medium: 1.4rem;
+        --small: 1rem;
+    }
+}

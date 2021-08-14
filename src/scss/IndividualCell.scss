@@ -1,0 +1,13 @@
+.boxContent {
+    height: inherit;
+    width: inherit;
+    line-height: inherit;
+    font-size: inherit;
+    z-index: 1;
+    padding: 0px;
+    margin: 0px;
+    
+    &:hover{
+        cursor: pointer;
+    }
+}
