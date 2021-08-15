@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import CreateBoard from "./CreateBoard";
 
-export default function Menu({ setBoard, setRows, setColumns, setMineLocation, setFlagCount, correctFlagPlaced }) {
+export default function Menu({ setBoard, setRows, setColumns, setMineLocation, setFlagCount, setTimer }) {
     const [visibility, setVisibility] = useState(true);
     const handleClick = (rows, columns, mines) => {
-        CreateBoard(rows, columns, mines, setBoard, setMineLocation, correctFlagPlaced);
+        CreateBoard(rows, columns, mines, setBoard, setMineLocation, setTimer);
         setFlagCount(mines);
         setVisibility(false);
         setRows(rows);

@@ -14,6 +14,7 @@ export default function App() {
     const [columns, setColumns] = useState(0);
     const [gameOver, setGameOver] = useState(false);
     const [correctFlagPlaced, setCorrectFlagPlaced] = useState(0);
+    const [timer, setTimer] = useState("0");
 
     useEffect(() => {}, [gameOver, board]);
 
@@ -25,9 +26,10 @@ export default function App() {
                 setColumns={setColumns}
                 setMineLocation={setMineLocation}
                 setFlagCount={setFlagCount}
+                setTimer={setTimer}
             />
             <h1 className='mainHeading'>
-                <img src={flag} alt ="flag"/> MineSweeper <img src={mine} alt ="mine"/>
+                <img src={flag} alt='flag' /> MineSweeper <img src={mine} alt='mine' />
             </h1>
             <Board
                 board={board}
@@ -41,12 +43,15 @@ export default function App() {
                 setGameOver={setGameOver}
                 correctFlagPlaced={correctFlagPlaced}
                 setCorrectFlagPlaced={setCorrectFlagPlaced}
+                timer={timer}
+                setTimer={setTimer}
             />
             <GameEnd
                 gameOver={gameOver}
                 setGameOver={setGameOver}
                 correctFlagPlaced={correctFlagPlaced}
                 mineLocation={mineLocation}
+                timer={timer}
             />
         </div>
     );

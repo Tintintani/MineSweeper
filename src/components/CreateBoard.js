@@ -1,4 +1,4 @@
-export default function CreateBoard(row, column, mines, setBoard, setMineLocation) {
+export default function CreateBoard(row, column, mines, setBoard, setMineLocation, setTimer) {
     let board = [];
     let mineLocation = [];
 
@@ -52,6 +52,9 @@ export default function CreateBoard(row, column, mines, setBoard, setMineLocatio
         }
     }
 
+    setTimeout(() => {
+        setTimer(0)
+    }, 800);
     setBoard(board);
     setMineLocation(mineLocation);
     console.log("Board " + row + "X" + column);

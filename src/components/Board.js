@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import IndividualCell from "./IndividualCell";
 
 import flag from "../assets/flag.png";
+import clock from "../assets/clock.png";
 
 export default function Board({
     board,
@@ -15,6 +16,8 @@ export default function Board({
     setGameOver,
     correctFlagPlaced,
     setCorrectFlagPlaced,
+    timer,
+    setTimer,
 }) {
     const size = () => {
         if (columns <= 10 && rows <= 10) {
@@ -30,13 +33,26 @@ export default function Board({
         }
     }, [board]);
 
+    useEffect(() => {
+        if (board.length !== 0) {
+            if (!gameOver) {
+                setTimeout(() => {
+                    setTimer((prev) => prev + 1);
+                    console.log("dfs");
+                }, 1000);
+            }
+        }
+    }, [timer]);
+
     return (
         <div className={`${board.length !== 0 ? "renderBoard" : ""}`}>
-            <div className='showFlagCount'>
+            <div className='header'>
                 <div className='imageHolder'>
-                    <img src={flag} alt={flag} style={{ height: "1.5em" }} />
+                    <img src={flag} alt={flag} style={{ height: "1.5em" }} />: {flagCount}
                 </div>
-                : {flagCount}
+                <div className='imageHolder'>
+                    <img src={clock} alt={clock} style={{ height: "1.5em" }} />: {timer}
+                </div>
             </div>
             <div className='board'>
                 {board.map((rows, indexR) => {

@@ -16,13 +16,15 @@
     visibility: var(--visibility);
 }
 
-.showFlagCount {
+.header {
     display: flex;
     justify-content: center;
     height: 2.5rem;
     line-height: 2.5rem;
     background: rgb(98, 201, 39);
     visibility: var(--visibility);
+    justify-content: space-between;
+    padding: 0px 40px;
 }
 
 .row {

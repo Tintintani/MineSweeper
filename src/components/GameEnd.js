@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-export default function GameEnd({ gameOver, setGameOver, correctFlagPlaced, mineLocation }) {
+export default function GameEnd({ gameOver, setGameOver, correctFlagPlaced, mineLocation, timer }) {
     const mines = mineLocation.length;
     useEffect(() => {
         if (mines === correctFlagPlaced && mines !== 0) setGameOver(true);
@@ -16,8 +16,8 @@ export default function GameEnd({ gameOver, setGameOver, correctFlagPlaced, mine
             className={`gameEnd 
             ${gameOver ? "render" : ""}`}
         >
-            <h2 className='menuHeading' style ={{fontWeight:"300"}}>{`${
-                correctFlagPlaced === mines ? "You Won!" : "Better Luck Next Time"
+            <h2 className='menuHeading' style={{ fontWeight: "300" }}>{`${
+                correctFlagPlaced === mines ? `You Won! Time : ${timer}` : `Better Luck Next Time`
             }`}</h2>
             <div
                 className='button'
