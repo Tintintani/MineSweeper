@@ -38,7 +38,6 @@ export default function Board({
             if (!gameOver) {
                 setTimeout(() => {
                     setTimer((prev) => prev + 1);
-                    console.log("dfs");
                 }, 1000);
             }
         }
