@@ -1,7 +1,7 @@
 :root {
-    --large: 3rem;
-    --medium: 2rem;
-    --small: 1.5rem;
+    --large: calc(65vh / 10);
+    --medium: calc(65vh / 15);
+    --small: calc(65vh / 20);
     --visibility: hidden;
 }
 .renderBoard {
@@ -88,8 +88,8 @@
 
 @media only screen and (max-width: 600px) {
     :root {
-        --large: 2rem;
-        --medium: 1.4rem;
-        --small: 1rem;
+        --large: calc(85vw / 10);
+        --medium: calc(85vw / 15);
+        --small: calc(85vw / 20);
     }
 }

@@ -16,9 +16,14 @@ export default function GameEnd({ gameOver, setGameOver, correctFlagPlaced, mine
             className={`gameEnd 
             ${gameOver ? "render" : ""}`}
         >
-            <h2 className='menuHeading' style={{ fontWeight: "300" }}>{`${
-                correctFlagPlaced === mines ? `You Won! Time : ${timer}` : `Better Luck Next Time`
-            }`}</h2>
+            {correctFlagPlaced === mines ? (
+                <p className='gameEndHeading'>
+                    {`You Won!`}
+                    <br /> {`Time: ${timer}`}
+                </p>
+            ) : (
+                <p className='gameEndHeading'>Better Luck Next Time!</p>
+            )}
             <div
                 className='button'
                 onClick={() => {

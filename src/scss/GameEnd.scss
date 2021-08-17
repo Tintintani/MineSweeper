@@ -5,20 +5,28 @@
     border-radius: 15px;
     width: 25vw;
     height: 20vh;
+    max-height: 150px;
+    padding: 10px;
     position: absolute;
     background: rgb(76, 221, 209);
-    top: calc(90vh / 2);
+    top: 40vh;
     visibility: var(--visibility);
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     &.render {
         animation: onLosing 250ms ease-in-out 0.5s;
     }
 }
 
+.gameEndHeading {
+    margin: 0px 0px 5px 0px;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
 @keyframes onLosing {
     from {
         transform: scale(0%);
@@ -27,5 +35,18 @@
     to {
         transform: scale(100%);
         opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .gameEnd {
+        height: 20vh;
+        width: 80vw;
+        display: flex;
+        top: 30vh;
+
+        & .button {
+            margin: 10px 0px;
+        }
     }
 }

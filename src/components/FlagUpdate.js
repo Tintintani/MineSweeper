@@ -1,5 +1,15 @@
-export default function FlagUpdate(e, x, y, board, setBoard, flagCount, setFlagCount, gameOver, correctFlagPlaced, setCorrectFlagPlaced) {
-    e.preventDefault();
+export default function FlagUpdate(
+    e,
+    x,
+    y,
+    board,
+    setBoard,
+    flagCount,
+    setFlagCount,
+    gameOver,
+    correctFlagPlaced,
+    setCorrectFlagPlaced
+) {
     let newBoard = JSON.parse(JSON.stringify(board));
     if (!gameOver || !newBoard[x][y].revealed) {
         if (!newBoard[x][y].flagged && flagCount) {

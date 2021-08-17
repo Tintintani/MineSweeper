@@ -1,4 +1,7 @@
 .Menu {
+    position: absolute;
+    z-index: 5;
+    top: 30vh;
     background: rgb(76, 221, 209);
     height: 25vh;
     width: 50vw;
@@ -8,15 +11,15 @@
     grid-template-rows: repeat(2, auto);
     justify-content: space-between;
 
-    padding:1rem;
+    padding: 1rem;
     border-radius: 15px;
     animation: onLoad 1s ease-in-out;
 
-    & .button{
-        margin:0px 20px;
+    & .button {
+        margin: 0px 20px;
     }
     & .menuHeading {
-        margin:0px;
+        margin: 0px;
         grid-column: 1/4;
         line-height: 10vh;
         font-weight: 300;
@@ -42,15 +45,16 @@
     }
 }
 
-
 @media only screen and (max-width: 600px) {
     .Menu {
-        height: 60vh;
+        height: 50vh;
+        width: 80vw;
         display: flex;
+        top: 20vh;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        & .option {
+        & .button {
             margin: 10px 0px;
         }
     }

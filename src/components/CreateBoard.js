@@ -53,7 +53,7 @@ export default function CreateBoard(row, column, mines, setBoard, setMineLocatio
     }
 
     setTimeout(() => {
-        setTimer(0)
+        setTimer(0);
     }, 800);
     setBoard(board);
     setMineLocation(mineLocation);

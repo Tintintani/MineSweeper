@@ -41,19 +41,30 @@ export default function IndividualCell({
         <div
             className='boxContent'
             onClick={() => {
-                if (!cell.flagged) leftClick();
+                if (!cell.flagged && !cell.revealed && !gameOver) leftClick();
             }}
-            onContextMenu={rightClick}
+            onContextMenu={(e) => {
+                e.preventDefault();
+                if (!cell.revealed && !gameOver) rightClick(e);
+            }}
         >
-            {!cell.revealed && cell.flagged
-                ? <div className = "imageHolder"><img src = {flag} alt = "flag"/></div>
-                : cell.revealed
-                ? cell.minePresent
-                    ? <div className = "imageHolder"><img src = {mine} alt = "mine"/></div>
-                    : cell.value !== 0
-                    ? cell.value
-                    : ""
-                : ""}
+            {!cell.revealed && cell.flagged ? (
+                <div className='imageHolder'>
+                    <img src={flag} alt='flag' />
+                </div>
+            ) : cell.revealed ? (
+                cell.minePresent ? (
+                    <div className='imageHolder'>
+                        <img src={mine} alt='mine' />
+                    </div>
+                ) : cell.value !== 0 ? (
+                    cell.value
+                ) : (
+                    ""
+                )
+            ) : (
+                ""
+            )}
         </div>
     );
 }

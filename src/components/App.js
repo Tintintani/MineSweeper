@@ -28,9 +28,11 @@ export default function App() {
                 setFlagCount={setFlagCount}
                 setTimer={setTimer}
             />
-            <h1 className='mainHeading'>
-                <img src={flag} alt='flag' /> MineSweeper <img src={mine} alt='mine' />
-            </h1>
+            <div className='mainHeading'>
+                <img src={flag} alt='flag' />
+                <h1 className='mainHeading'>MineSweeper</h1>
+                <img src={mine} alt='mine' />
+            </div>
             <Board
                 board={board}
                 setBoard={setBoard}

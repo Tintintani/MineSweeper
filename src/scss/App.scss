@@ -4,7 +4,7 @@
         "Droid Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
+
     background: yellowgreen;
     text-align: center;
     display: flex;
@@ -14,16 +14,16 @@
     width: 100vw;
     overflow: hidden;
 }
-.Menu {
-    position: absolute;
-    z-index: 5;
-    top: 30vh;
-}
 
 .mainHeading {
     font-size: 3rem;
     line-height: 3rem;
+    display: flex;
+    flex: row;
+    justify-content: center;
+    align-items: center;
     & img {
+        margin: 0px 6px;
         padding: 4px 0px 0px 0px;
         height: 2.5rem;
     }
@@ -32,7 +32,8 @@
 .button {
     background: rgb(14, 214, 14);
     height: 3rem;
-    width: 9rem;
+    width: 12vw;
+    max-width: 10rem;
     line-height: 3rem;
 
     font-size: 1.5rem;
@@ -57,4 +58,10 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .button {
+        width: 9rem;
+    }
 }

@@ -1,5 +1,4 @@
 export default function Reveal(x, y, board, setBoard, mineLocation, flagCount, setFlagCount, gameOver, setGameOver) {
-    
     if (!gameOver) {
         let newBoard = [...board];
         const validCoords = (x, y) => {
@@ -50,12 +49,13 @@ export default function Reveal(x, y, board, setBoard, mineLocation, flagCount, s
                             checkFlag(dir[i][0], dir[i][1]);
                         }
                     }
-                }   
+                }
             }
         };
 
         if (newBoard[x][y].minePresent) {
-            for (let i = 0; i < mineLocation.length; i++) newBoard[mineLocation[i][0]][mineLocation[i][1]].revealed = true;
+            for (let i = 0; i < mineLocation.length; i++)
+                newBoard[mineLocation[i][0]][mineLocation[i][1]].revealed = true;
             setGameOver(true);
         } else revealingArea();
 
