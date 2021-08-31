@@ -54,9 +54,12 @@ export default function Reveal(x, y, board, setBoard, mineLocation, flagCount, s
         };
 
         if (newBoard[x][y].minePresent) {
-            for (let i = 0; i < mineLocation.length; i++)
+            for (let i = 0; i < mineLocation.length; i++) {
                 newBoard[mineLocation[i][0]][mineLocation[i][1]].revealed = true;
-            setGameOver(true);
+                setTimeout(() => {
+                    setGameOver(true);
+                }, 1500)
+            }
         } else revealingArea();
 
         setBoard(newBoard);
